@@ -196,57 +196,21 @@
 <!-- MODE TABS -->
 <div class="mode-tabs">
   <button class="mode-tab active" id="tabBg" onclick="switchMode('bg')">🖼️ Remove Background</button>
-  <button class="mode-tab" id="tabObj" onclick="switchMode('obj')">✂️ Remove Object</button>
+<div class="mode-tab" id="tabObj" onclick="switchMode('obj')">✂️ Remove Object 🔜</div>
 </div>
 
 <!-- OBJECT REMOVAL SECTION -->
 <div id="objSection" style="display:none;position:relative;z-index:1;max-width:720px;margin:0 auto 40px;padding:0 20px">
-  <div class="object-hint">🎨 Upload photo → Paint over object → Click Remove!</div>
-  <div id="objUploadZone" style="background:var(--card);border:2px dashed var(--border);border-radius:24px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s" onclick="document.getElementById('objFileInput').click()">
-    <div style="font-size:50px;margin-bottom:14px">✂️</div>
-    <div style="font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;margin-bottom:8px">Upload Image</div>
-    <div style="color:var(--muted);font-size:14px;margin-bottom:20px">Then paint over the object you want to remove</div>
-    <button class="upload-btn" onclick="event.stopPropagation();document.getElementById('objFileInput').click()">📁 Choose Image</button>
-    <input type="file" id="objFileInput" accept="image/*" style="display:none"/>
-  </div>
-
-  <div id="objCanvasArea" style="display:none;margin-top:16px">
-    <div class="canvas-container" id="canvasContainer">
-      <canvas id="objCanvas"></canvas>
-    </div>
-    <div class="brush-controls">
-      <span class="brush-label">🖌️ Brush:</span>
-      <input type="range" class="brush-slider" id="brushSize" min="5" max="60" value="20"/>
-      <button class="brush-btn" id="eraseBtn" onclick="toggleErase()">🧹 Erase</button>
-      <button class="brush-btn" onclick="clearMask()">🗑️ Clear</button>
-    </div>
-    <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <button class="upload-btn" style="flex:1;justify-content:center" onclick="removeObject()">✂️ Remove Object!</button>
-      <button class="btn-secondary" onclick="resetObjTool()">↩ New Image</button>
-    </div>
-  </div>
-
-  <div id="objProcessing" style="display:none;text-align:center;padding:40px">
-    <div class="heart-icon">❤️</div>
-    <div style="font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;margin-bottom:6px">Removing Object...</div>
-    <div style="color:var(--muted);font-size:14px">AI is working its magic ✨</div>
-  </div>
-
-  <div id="objResult" style="display:none;margin-top:16px">
-    <div style="font-family:'Clash Display',sans-serif;font-size:18px;font-weight:600;margin-bottom:14px">✅ Object Removed!</div>
-    <div class="result-grid">
-      <div class="result-card">
-        <div class="result-card-label"><span class="dot dot-original"></span> Original</div>
-        <div class="img-wrapper"><img id="objOriginalImg" src="" alt="Original"/></div>
-      </div>
-      <div class="result-card">
-        <div class="result-card-label"><span class="dot dot-processed"></span> Object Removed</div>
-        <div class="img-wrapper transparent-bg"><img id="objResultImg" src="" alt="Result"/></div>
-      </div>
-    </div>
-    <div class="result-actions" style="margin-top:14px">
-      <a class="btn-primary" id="objDownloadBtn" download="sibi-object-removed.png">⬇ Download PNG</a>
-      <button class="btn-secondary" onclick="resetObjTool()">🔄 New Image</button>
+  <div style="background:#1a1a26;border:2px dashed #2a2a3d;border-radius:24px;padding:60px 40px;text-align:center">
+    <div style="font-size:70px;margin-bottom:20px">🔜</div>
+    <div style="font-family:'Clash Display',sans-serif;font-size:28px;font-weight:700;margin-bottom:12px">Coming Soon!</div>
+    <div style="color:#7a7a9a;font-size:15px;line-height:1.7;max-width:400px;margin:0 auto 24px">Object removal is under development.<br/>Remove cars, bikes, animals, furniture and anything with 99% accuracy!</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <div style="background:rgba(67,233,123,0.1);border:1px solid rgba(67,233,123,0.2);padding:8px 16px;border-radius:10px;font-size:13px;color:#43e97b">🚗 Cars</div>
+      <div style="background:rgba(67,233,123,0.1);border:1px solid rgba(67,233,123,0.2);padding:8px 16px;border-radius:10px;font-size:13px;color:#43e97b">🏍️ Bikes</div>
+      <div style="background:rgba(67,233,123,0.1);border:1px solid rgba(67,233,123,0.2);padding:8px 16px;border-radius:10px;font-size:13px;color:#43e97b">🐕 Animals</div>
+      <div style="background:rgba(67,233,123,0.1);border:1px solid rgba(67,233,123,0.2);padding:8px 16px;border-radius:10px;font-size:13px;color:#43e97b">🪑 Furniture</div>
+      <div style="background:rgba(67,233,123,0.1);border:1px solid rgba(67,233,123,0.2);padding:8px 16px;border-radius:10px;font-size:13px;color:#43e97b">✨ Anything!</div>
     </div>
   </div>
 </div>
